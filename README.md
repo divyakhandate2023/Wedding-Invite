@@ -1,86 +1,40 @@
-# Divya & Nandan Wedding Invitation Website
+# Divya & Nandan Lilac Wedding Invitation Website
 
-A mobile-first Hindu wedding invitation website with:
+This version uses a lilac, cream, blush, and gold wedding palette instead of sage green.
 
-- Landing page with envelope-style invite
-- Event information section
+## Added interactive elements
+- Wedding countdown timer
+- Copy invite link button
+- Click-to-open envelope invitation
+- Animated falling petals
+- Clickable/expandable event cards
 - RSVP form
-- Editable configuration file
-- Free static hosting compatibility
+- Add to calendar button
+- Venue map button
+- Expandable details section for dress code, travel, and what to bring
 
 ## Files
+- `index.html`
+- `styles.css`
+- `app.js`
+- `wedding-config.js`
+- `README.md`
 
-- `index.html` — website structure
-- `styles.css` — design and responsive layout
-- `app.js` — interactions and RSVP logic
-- `wedding-config.js` — edit names, dates, venue, RSVP endpoint, and wording
-
-## Edit wedding details
-
+## Edit details
 Open `wedding-config.js` and update:
 
 ```js
 brideName: "Divya",
 groomName: "Nandan",
-weddingDateDisplay: "26th November",
-weddingCity: "Dallas, Texas",
 venueName: "Venue name to be added",
 venueAddress: "Dallas, Texas",
-googleMapsLink: "https://maps.google.com/?q=Dallas%20Texas"
+RSVP_EMAIL: "your-email@example.com",
+RSVP_ENDPOINT: "",
+countdownTarget: "2026-11-26T11:55:00-06:00"
 ```
 
-Update the event cards here:
-
-```js
-events: [
-  {
-    title: "Haldi & Mehendi",
-    date: "25th November",
-    time: "Starting from 3:00 PM",
-    location: "Venue details to be added"
-  },
-  {
-    title: "Wedding Ceremony",
-    date: "26th November",
-    time: "11:55 AM – 1:25 PM",
-    location: "Venue details to be added"
-  }
-]
-```
-
-## Make RSVP work
-
-Because this is a free static website, it needs a form endpoint to collect RSVP submissions.
-
-### Option 1: Formspree
-
-1. Create a free form on Formspree.
-2. Copy the endpoint URL.
-3. Paste it in `wedding-config.js`:
-
-```js
-RSVP_ENDPOINT: "https://formspree.io/f/yourFormId"
-```
-
-### Option 2: Email fallback
-
-Leave `RSVP_ENDPOINT` blank and update:
-
-```js
-RSVP_EMAIL: "your-email@example.com"
-```
-
-Then the RSVP form will open the guest's email app with the RSVP details.
-
-## Free hosting options
-
-You can host this as a static website using GitHub Pages, Netlify, Vercel, or Cloudflare Pages.
-
-## Local preview
-
-Open `index.html` in a browser.
-
-For a better local preview, run:
+## Run locally
+From this folder:
 
 ```bash
 python -m http.server 8000
@@ -90,4 +44,14 @@ Then open:
 
 ```text
 http://localhost:8000
+```
+
+## Push updates to GitHub
+
+After replacing your current files with this version:
+
+```bash
+git add .
+git commit -m "Update wedding website to lilac theme"
+git push
 ```
