@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wedding invitation for Divya and Nandan" />
+  <title>Divya & Nandan Wedding Invitation</title>
+
+  <!-- Free fonts. You may remove this if you want the site to work fully offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">D & N</a>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+    <nav class="nav-links">
+      <a href="#home">Invite</a>
+      <a href="#events">Events</a>
+      <a href="#rsvp">RSVP</a>
+      <a href="#details">Details</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- LANDING PAGE -->
+    <section id="home" class="section hero">
+      <div class="floating-flower flower-1">✿</div>
+      <div class="floating-flower flower-2">❀</div>
+      <div class="floating-flower flower-3">✼</div>
+
+      <div class="hero-card">
+        <p class="mini-title" data-config="blessing">|| Shree Ganeshaya Namah ||</p>
+        <div class="ganesha">ॐ</div>
+
+        <div class="envelope-wrap" aria-label="Wedding invitation envelope">
+          <button class="envelope" id="openInviteButton">
+            <span class="flap"></span>
+            <span class="floral-line top"></span>
+            <span class="seal" data-config="initials">D & N</span>
+            <span class="floral-line bottom"></span>
+          </button>
+          <p class="tap-text">Tap the envelope to open your invitation</p>
+        </div>
+
+        <div class="invite-reveal" id="inviteReveal">
+          <p class="sub-heading">With hearts full of joy, we are delighted to invite you to celebrate the beginning of our forever.</p>
+          <h1><span data-config="brideName">Divya</span> <span class="amp">&</span> <span data-config="groomName">Nandan</span></h1>
+          <p class="date-line" data-config="weddingDateDisplay">26th November</p>
+          <a class="primary-button" href="#events">View Wedding Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT INFORMATION -->
+    <section id="events" class="section events-section">
+      <div class="section-heading">
+        <p class="mini-title">Our Celebration</p>
+        <h2>Events & Timings</h2>
+        <p>We would be happy to have you with us as we celebrate love, family, laughter, blessings, and new beginnings.</p>
+      </div>
+
+      <div class="event-grid" id="eventCards"></div>
+    </section>
+
+    <!-- RSVP PAGE -->
+    <section id="rsvp" class="section rsvp-section">
+      <div class="rsvp-card">
+        <div class="section-heading">
+          <p class="mini-title">Join Us</p>
+          <h2>RSVP</h2>
+          <p>Your presence would mean a lot to us. Please let us know whether you will be joining the celebration.</p>
+        </div>
+
+        <form id="rsvpForm">
+          <div class="form-row">
+            <label for="guestName">Full Name</label>
+            <input id="guestName" name="guestName" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="guestEmail">Email / Phone</label>
+            <input id="guestEmail" name="guestEmail" type="text" placeholder="Email or phone number" required />
+          </div>
+
+          <div class="form-row">
+            <label for="attendance">Will you attend?</label>
+            <select id="attendance" name="attendance" required>
+              <option value="">Select one</option>
+              <option value="Yes, I will attend">Yes, I will attend</option>
+              <option value="Sorry, I cannot attend">Sorry, I cannot attend</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="guestCount">Number of Guests</label>
+            <input id="guestCount" name="guestCount" type="number" min="1" max="10" value="1" required />
+          </div>
+
+          <fieldset class="form-row checkbox-group">
+            <legend>Events attending</legend>
+            <label><input type="checkbox" name="events" value="Haldi & Mehendi" /> Haldi & Mehendi</label>
+            <label><input type="checkbox" name="events" value="Wedding Ceremony" /> Wedding Ceremony</label>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="message">Message / Dietary Notes</label>
+            <textarea id="message" name="message" rows="4" placeholder="Optional message"></textarea>
+          </div>
+
+          <button class="primary-button full-width" type="submit">Submit RSVP</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- EXTRA DETAILS -->
+    <section id="details" class="section details-section">
+      <div class="details-card">
+        <p class="mini-title">Wedding Details</p>
+        <h2 data-config="weddingCity">Dallas, Texas</h2>
+        <p data-config="detailsText">
+          We look forward to celebrating this beautiful occasion with our family and friends. More venue and travel details can be added here.
+        </p>
+
+        <div class="quick-links">
+          <a id="calendarLink" class="secondary-button" href="#" target="_blank" rel="noopener">Add Wedding to Calendar</a>
+          <a id="mapsLink" class="secondary-button" href="#" target="_blank" rel="noopener">Open Venue Map</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with love for <span data-config="brideName">Divya</span> & <span data-config="groomName">Nandan</span></p>
+  </footer>
+
+  <script src="wedding-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
