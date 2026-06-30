@@ -65,10 +65,18 @@ function renderEvents() {
 function setupRevealAnimations() {
   const elements = document.querySelectorAll(".reveal");
 
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((el) => el.classList.add("visible"));
+    return;
+  }
+
+  elements.forEach((el) => el.classList.add("animate-ready"));
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });

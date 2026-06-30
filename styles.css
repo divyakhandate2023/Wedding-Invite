@@ -820,13 +820,19 @@ textarea:focus{
 
 /* Reveal animation */
 
+/* Content is visible by default so the page never appears blank if JavaScript is delayed or blocked. */
 .reveal{
+  opacity: 1;
+  transform: none;
+}
+
+.reveal.animate-ready{
   opacity: 0;
   transform: translateY(26px);
   transition: opacity .65s ease, transform .65s ease;
 }
 
-.reveal.visible{
+.reveal.animate-ready.visible{
   opacity: 1;
   transform: translateY(0);
 }
